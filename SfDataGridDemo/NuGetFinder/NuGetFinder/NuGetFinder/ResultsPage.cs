@@ -1,13 +1,16 @@
-# how-to-fetch-and-populate-data-using-ODataV4-in-Xamarin.Forms-datagrid
+﻿using Simple.OData.Client;
+using Syncfusion.SfDataGrid.XForms;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
-## About the sample
-This example illustrates how to fetch and popuplate data using ODataV4 in Xmarin.Forms SfDataGrid.
-
-Simple.OData.Client is a cross-platform client library through which you can fetch and update data online. In, the below sample we fetched the data from online and loaded those data to SfDataGrid by using Simple.OData.Client library.
-
-```C#
-public class ResultsPage : ContentPage
+namespace NuGetFinder
 {
+    public class ResultsPage : ContentPage
+    {
         IEnumerable<Package> packages;
         SfDataGrid dataGrid;
         ActivityIndicator activityIndicator;
@@ -90,14 +93,5 @@ public class ResultsPage : ContentPage
 
             return await command.FindEntriesAsync();
         }
+    }
 }
-```
-
-## <a name="requirements-to-run-the-demo"></a>Requirements to run the demo ##
-
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/).
-* Xamarin add-ons for Visual Studio (available via the Visual Studio installer).
-
-## <a name="troubleshooting"></a>Troubleshooting ##
-### Path too long exception
-If you are facing path too long exception when building this example project, close Visual Studio and rename the repository to short and build the project.
